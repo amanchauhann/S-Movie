@@ -1,0 +1,22 @@
+body{
+    min-height: 100vh;
+    margin: 0;
+    border: 2px solid green;
+}
+
+.mainContainer{
+    border: 1px solid red;
+    min-height: 300px;
+    max-width: 550px;
+}
+
+.upperContainer{
+    background-image: url('./images/bgImg.jpg');
+    border: 1px solid black;
+    min-height: 150px;
+}
+
+.watchlistContainer{
+    border: 1px solid purple;
+    min-height: 50%;
+}
