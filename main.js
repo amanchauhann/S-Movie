@@ -6,32 +6,33 @@ const baseURL = "http://www.omdbapi.com/"
 const API = "apikey=adeca441"
 
 
-// if(input.value.length === 0){
-//     button.setAttribute("disabled", "")
-// }
-
-
+// This is submit button after entering input in search field.
 button.addEventListener(("click"), clickhandler)
 
 function clickhandler(){
+    // This is clearing the watchList so previous results doesnt show up with the current results.
+    document.getElementById("watchlistContainer").innerHTML ="";
+
     getMovie()
-    console.log(input.value)
 }
 
 function getMovie() {
+    // This is clearing the id so previous results doesnt show up with the current results.
+    id=[]
+
     // this is getiing the id of movies in result of search.
     fetch(`${baseURL}?s=${input.value}&${API}`)
     .then(res=>res.json())
     .then(data=>{
-        console.log(data)
-        // storing the id in global variable
+        // storing the id in global array.
         for (let i=0; i<data.Search.length; i++){
             id.push(data.Search[i].imdbID)
         }
-        // id = data.Search[0].imdbID
+
         // invoking function to get movie detail by above id
         getMovieDetails()
-        console.log(id)
+
+        // clearing input field
         input.value = "";
 
     })
@@ -39,12 +40,12 @@ function getMovie() {
 
 // this is using id from getMovie() and id variable and getting movie details
 function getMovieDetails() {
-    // this is fetching us movi detail
+    // this is fetching us movie detail
     for(let i=0; i<id.length; i++){
         fetch(`${baseURL}?i=${id[i]}&${API}`)
     .then(res=>res.json())
     .then(data=>{
-        console.log(data)
+
         document.getElementById("watchlistContainer").innerHTML += `
         <div class="movieContainer">
         <div class="imageContainer">
@@ -116,3 +117,9 @@ function getMovieDetails() {
     //         console.log(data)
     //     })
     // })
+
+
+
+    // if(input.value.length === 0){
+//     button.setAttribute("disabled", "")
+// }
