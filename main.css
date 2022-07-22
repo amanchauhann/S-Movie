@@ -1,22 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
+
 body{
     min-height: 100vh;
     margin: 0;
     border: 2px solid green;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .mainContainer{
     border: 1px solid red;
-    min-height: 300px;
+    min-height: 780px;
     max-width: 550px;
+    margin: auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
 }
 
 .upperContainer{
+    background-color: #595b5c;
     background-image: url('./images/bgImg.jpg');
+    background-blend-mode: multiply;
     border: 1px solid black;
-    min-height: 150px;
+    min-height: 210px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    color: white;
+}
+
+.upperContainer>*{
+    /* border: 1px solid green; */
+    margin: 0;
+    align-self: center;
 }
 
 .watchlistContainer{
-    border: 1px solid purple;
-    min-height: 50%;
+    border: 3px solid purple;
+    min-height: 570px;
+}
+
+.movieContainer{
+    display: flex;
+    gap: 1rem;
+}
+
+.firstContainer{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* .firstContainer>*{
+    border: 1px solid red;
+    align-self: center;
+} */
+
+.secondContainer{
+    display: flex;
+    gap: 0.8rem;
+}
+
+.thirdContainer{
+    display: flex;
+}
+
+input{
+    /* margin: 0.4rem; */
+    /* margin-top: -10px; */
+    padding: 0.5rem;
+    height: 2rem;
+    width: 20rem;
+    border-radius: 12px;
+    /* margin-bottom: -5px; */
+}
+
+.imageContainer{
+    border: 1px solid red;
+    max-height: 180px;
+    /* width: 120px; */
+}
+
+.imageContainer>img{
+    max-height:100%;
+    max-width: 10rem;
+}
+
+.inputContainer{
+    /* margin: 0.5rem; */
+    /* border: 7px solid red; */
+    max-width: fit-content;
+    margin: 1rem auto;
 }
