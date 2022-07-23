@@ -1,7 +1,7 @@
 let id = [];
 let input = document.getElementById("input");
 let button = document.getElementById("submitBtn")
-const idsFromLocalStorage = JSON.parse( localStorage.getItem("localIds") );
+let idsFromLocalStorage = JSON.parse( localStorage.getItem("localIds") );
 
 let localId = [];
 
@@ -116,6 +116,9 @@ function removeFromLocalStorage(index){
     location.reload();
 }
 
+
+
+if(idsFromLocalStorage.length>0){
     for(let i=0; i<idsFromLocalStorage.length; i++){
         // function localFunction(){
         //     localId.push(id[i])
@@ -151,6 +154,8 @@ function removeFromLocalStorage(index){
         `
     })
     }
+}
+    
 // })
 
 
