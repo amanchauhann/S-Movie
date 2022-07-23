@@ -2,6 +2,8 @@ let id = [];
 let input = document.getElementById("input");
 let button = document.getElementById("submitBtn")
 
+let localId = [];
+
 const baseURL = "http://www.omdbapi.com/"
 const API = "apikey=adeca441"
 
@@ -42,6 +44,10 @@ function getMovie() {
 function getMovieDetails() {
     // this is fetching us movie detail
     for(let i=0; i<id.length; i++){
+        function localFunction(){
+            localId.push(id[i])
+            console.log(localId)
+        }
         fetch(`${baseURL}?i=${id[i]}&${API}`)
     .then(res=>res.json())
     .then(data=>{
@@ -61,7 +67,7 @@ function getMovieDetails() {
             <div class="secondContainer">
                 <p>${data.Runtime}</p>
                 <p>${data.Genre}</p>
-                <button>Watchlist</button>
+                <button onClick="localFunction()">Watchlist</button>
             </div>
 
             <div class="thirdContainer">
